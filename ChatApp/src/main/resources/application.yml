@@ -1,0 +1,16 @@
+server:
+  port: 8080
+local:
+  server:
+    port: 8080
+spring:
+  rsocket:
+    server:
+      mapping-path: /rsocketChat
+      transport: websocket
+      port: 8181
+logging:
+  level:
+    org:
+      springframework:
+        boot: DEBUG
