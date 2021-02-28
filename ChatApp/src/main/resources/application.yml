@@ -13,4 +13,4 @@ logging:
   level:
     org:
       springframework:
-        boot: DEBUG
+        boot: ERROR

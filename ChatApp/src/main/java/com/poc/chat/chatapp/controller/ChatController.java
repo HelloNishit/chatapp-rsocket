@@ -1,6 +1,7 @@
 package com.poc.chat.chatapp.controller;
 
 import com.poc.chat.chatapp.message.model.ChatMessage;
+import com.poc.chat.chatapp.message.model.User;
 import com.poc.chat.chatapp.repository.MessageStaticRepository;
 import com.poc.chat.chatapp.repository.UserRepository;
 import com.poc.chat.chatapp.service.ChatMessageServiceImpl;
@@ -22,9 +23,10 @@ public class ChatController {
     private ChatMessageServiceImpl chatMessageService;
 
     @MessageMapping("subscribeChatMessage")
-    public Flux<ChatMessage> subscribeChatMessage(String userName) {
-        System.out.println(userName + "lastMessageId: " + 0);
-        return chatMessageService.getChatMessage(userName,0);
+    public Flux<ChatMessage> subscribeChatMessage(User user) {
+
+//        System.out.println(user.getUserName() + "lastMessageId: " + 0);
+        return chatMessageService.getChatMessage(user.getUserName(),0);
     }
 
     @MessageMapping("sendSubscribeChatMessage")

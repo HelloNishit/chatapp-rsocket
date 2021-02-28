@@ -10,8 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserService } from '../service/User.service';
 import {CardModule} from 'primeng/card';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
+import {ToastModule} from 'primeng/toast';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     FormsModule,
+    ToastModule,
     CardModule,
     ScrollPanelModule,
     AppRoutingModule,
@@ -29,7 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ButtonModule,
     HttpClientModule
   ],
-  providers: [UserService],
+  providers: [UserService,MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
